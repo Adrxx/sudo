@@ -1,0 +1,174 @@
+@import normalize.css
+
+@mixin tablet
+  @media (min-width: 750px)
+    @content
+// Font
+@font-face
+  font-family: "Inconsolata"
+  font-weight: normal
+  font-style: normal
+
+  src: url("../fonts/Inconsolata.otf") format("opentype")
+
+$dark-jungle-green: #151820
+$medium-jungle-green: #252933
+$crimson: #de0f34
+$red: #f40b43
+$cerise-pink: #f1436d
+$wild-blue-yonder: #a2b0d9
+$anti-flash-white: #f1f1f1
+
+// All
+body
+  position:fixed
+  font-family: "Inconsolata"
+
+  color: $anti-flash-white
+  background-color: $medium-jungle-green
+
+header.blog-title
+  position: fixed
+  padding: 25px 0
+  z-index: 100
+  top: 0
+  left: 0
+  font-size: 1.3em
+  display: block
+  width: 100%
+  background: linear-gradient($medium-jungle-green, transparent)
+  .text
+    color: $anti-flash-white
+    text-decoration: none
+    margin-left: 25px
+
+// Index
+
+.line
+  display: none
+  position: absolute
+  left: 50%
+  transform: translateX(-50%)
+  width: 1px
+  height: 100%
+  border: dotted 1px transparentize($wild-blue-yonder, 0.6)
+  //background-color: transparentize($wild-blue-yonder, 0.6)
+  @include tablet
+    display: block
+.posts-index
+  position: relative
+  padding: 80px 0px
+  width: 80%
+  margin: 0 auto
+  .date
+    position: relative
+    opacity: 1.0
+    text-align: center
+    color: transparentize($wild-blue-yonder, 0.4)
+    background-color: $medium-jungle-green
+    padding: 10px
+  .post
+    position: relative
+    visibility: hidden
+    display: flex
+    justify-content: center
+    flex-wrap: wrap
+    @include tablet
+      &:nth-of-type(even) .art
+        order: 1
+    section
+      width: 95%
+      margin: 0
+      min-height: 200px
+      @include tablet
+        min-height: 200px
+        width: 35%
+        min-width: 200px
+        margin: 0px 5%
+  .title
+    color: $cerise-pink
+    font-weight: 200
+    a
+      color: $cerise-pink
+      text-decoration: none
+    &::before
+      content: "$ "
+  .art
+    position: relative
+    .image
+      width: 100%
+      height: 100%
+      transform: scale(0.65)
+      background-position: center
+      background-size: contain
+      background-repeat: no-repeat
+  .text
+    position: relative
+    header
+      position: relative
+    .glow
+      cursor: pointer
+      position: absolute
+      margin: 0
+      top: 0px
+      left: 0px
+      transition: all 1s
+      &:hover
+        filter: blur(4px)
+        transform: scaleY(1.1) scaleX(1.0)
+    .centered
+      position: absolute
+      top: 50%
+      transform: translateY(-50%)
+  .excerpt
+    $excerpt-height: 3.5em
+    max-height: $excerpt-height
+    overflow: hidden
+    color: $wild-blue-yonder
+    font-size: 0.9em
+
+// POST
+.content
+  width: 85%
+  font-size: 0.9em
+  margin: 0 auto
+  padding-top: 150px
+  @include tablet
+    width: 55%
+    font-size: 1em
+
+
+
+
+  .post
+    .meta
+      color: $wild-blue-yonder
+    .title
+      font-size: 2.2em
+      color: $cerise-pink
+      &::before
+        content: "$ "
+    .text
+      opacity: 0.0
+      transition: opacity 1s 0.5s
+      font-size: 1.2em
+      line-height: 1.4em
+      &.revealed
+        opacity: 1.0
+  .author
+    text-align: center
+    font-weight: 200
+  .share
+    padding-top: 40px
+    text-align: center
+    a
+      text-decoration: none
+      padding: 10px 20px
+      margin: 5px
+      border: solid 1px $wild-blue-yonder
+      border-radius: 20px
+      color: $wild-blue-yonder
+
+  #disqus_thread
+    padding-top: 80px
+    padding-bottom: 20px

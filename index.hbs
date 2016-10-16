@@ -1,0 +1,56 @@
+{{!< default}}
+
+{{! The comment above "< default" means - insert everything in this file into
+    the {body} of the default.hbs template, which contains our header/footer. }}
+
+{{! The big featured header on the homepage, with the site logo and description }}
+{{!-- <header id="site-head" {{#if @blog.cover}}style="background-image: url({{@blog.cover}})"{{/if}}>
+    <div class="vertical animated bounceInDown">
+        <div id="site-head-content" class="inner">
+
+            {{#if @blog.logo}}<a id="blog-logo" href="{{@blog.url}}"><img src="{{@blog.logo}}" alt="Blog Logo" /></a>{{/if}}
+            <h1 class="blog-title">{{@blog.title}}</h1>
+            <h2 class="blog-description">{{@blog.description}}</h2>
+        </div>
+    </div>
+</header> --}}
+
+
+{{! The main content area on the homepage }}
+
+<main class="posts-index" role="main">
+    <div class="line"></div>
+    {{! Each post will be output using this markup }}
+    {{#foreach posts}}
+        <div class="date">{{date}}</div>
+        <article class="post reveal">
+            <section class="art">
+                <div class="image" style="background-image: url('{{image}}')"></div>
+            </section>
+            <section class="text">
+                <div class="centered">
+                    <header>
+                        <h2 class="title glow"><a href="{{{url}}}">{{{title}}}</a></h2>
+                        <h2 class="title">{{{title}}}</h2>
+                    </header>
+                    <p class="excerpt">{{excerpt}}&hellip;</p>
+                </div>
+            </section>
+        </article>
+    {{/foreach}}
+
+</main>
+
+<script id="dsq-count-scr" src="//rhodo-chro-site.disqus.com/count.js" async></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="/assets/js/typed.min.js"></script>
+<script>
+    $(function(){
+        $(".blog-title .text").typed({
+            strings: ["$ ¡Hola mundo!","$ México {{date}}","$ Twitter: {{@blog.twitter}}","$ {{@blog.description}}", "{{@blog.title}}"],
+            typeSpeed: 100,
+            startDelay: 1500,
+            backDelay: 600
+        });
+    });
+</script>

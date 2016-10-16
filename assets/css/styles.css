@@ -1,0 +1,151 @@
+@import url(normalize.css);
+@font-face {
+  font-family: "Inconsolata";
+  font-weight: normal;
+  font-style: normal;
+  src: url("../fonts/Inconsolata.otf") format("opentype"); }
+body {
+  font-family: "Inconsolata";
+  color: #f1f1f1;
+  background-color: #252933; }
+
+header.blog-title {
+  position: fixed;
+  padding: 25px 0;
+  z-index: 100;
+  top: 0;
+  left: 0;
+  font-size: 1.3em;
+  display: block;
+  width: 100%;
+  background: linear-gradient(#252933, transparent); }
+  header.blog-title .text {
+    color: #f1f1f1;
+    text-decoration: none;
+    margin-left: 25px; }
+
+.line {
+  display: none;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 1px;
+  height: 100%;
+  border: dotted 1px rgba(162, 176, 217, 0.4); }
+  @media (min-width: 750px) {
+    .line {
+      display: block; } }
+
+.posts-index {
+  position: relative;
+  padding: 80px 0px;
+  width: 80%;
+  margin: 0 auto; }
+  .posts-index .date {
+    position: relative;
+    opacity: 1;
+    text-align: center;
+    color: rgba(162, 176, 217, 0.6);
+    background-color: #252933;
+    padding: 10px; }
+  .posts-index .post {
+    position: relative;
+    visibility: hidden;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; }
+    @media (min-width: 750px) {
+      .posts-index .post:nth-of-type(even) .art {
+        order: 1; } }
+    .posts-index .post section {
+      width: 95%;
+      margin: 0;
+      min-height: 200px; }
+      @media (min-width: 750px) {
+        .posts-index .post section {
+          min-height: 200px;
+          width: 35%;
+          min-width: 200px;
+          margin: 0px 5%; } }
+  .posts-index .title {
+    color: #f1436d;
+    font-weight: 200; }
+    .posts-index .title a {
+      color: #f1436d;
+      text-decoration: none; }
+    .posts-index .title::before {
+      content: "$ "; }
+  .posts-index .art {
+    position: relative; }
+    .posts-index .art .image {
+      width: 100%;
+      height: 100%;
+      transform: scale(0.65);
+      background-position: center;
+      background-size: contain;
+      background-repeat: no-repeat; }
+  .posts-index .text {
+    position: relative; }
+    .posts-index .text header {
+      position: relative; }
+    .posts-index .text .glow {
+      cursor: pointer;
+      position: absolute;
+      margin: 0;
+      top: 0px;
+      left: 0px;
+      transition: all 1s; }
+      .posts-index .text .glow:hover {
+        filter: blur(4px);
+        transform: scaleY(1.1) scaleX(1); }
+    .posts-index .text .centered {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%); }
+  .posts-index .excerpt {
+    max-height: 3.5em;
+    overflow: hidden;
+    color: #a2b0d9;
+    font-size: 0.9em; }
+
+.content {
+  width: 85%;
+  font-size: 0.9em;
+  margin: 0 auto;
+  padding-top: 150px; }
+  @media (min-width: 750px) {
+    .content {
+      width: 55%;
+      font-size: 1em; } }
+  .content .post .meta {
+    color: #a2b0d9; }
+  .content .post .title {
+    font-size: 2.2em;
+    color: #f1436d; }
+    .content .post .title::before {
+      content: "$ "; }
+  .content .post .text {
+    opacity: 0;
+    transition: opacity 1s 0.5s;
+    font-size: 1.2em;
+    line-height: 1.4em; }
+    .content .post .text.revealed {
+      opacity: 1; }
+  .content .author {
+    text-align: center;
+    font-weight: 200; }
+  .content .share {
+    padding-top: 40px;
+    text-align: center; }
+    .content .share a {
+      text-decoration: none;
+      padding: 10px 20px;
+      margin: 5px;
+      border: solid 1px #a2b0d9;
+      border-radius: 20px;
+      color: #a2b0d9; }
+  .content #disqus_thread {
+    padding-top: 80px;
+    padding-bottom: 20px; }
+
+/*# sourceMappingURL=styles.css.map */
