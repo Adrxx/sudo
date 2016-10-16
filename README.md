@@ -1,6 +1,6 @@
 # Sudo
 
-A theme designed for 'binary literature' whatever that means.
+A [Ghost](https://ghost.org/) theme designed for 'binary literature' whatever that means.
 
 <p align="center">
   <img src="http://ment.com.mx/sudo_theme/s1.png" style="width: 100%; max-width:800px;" />
@@ -9,6 +9,5 @@ A theme designed for 'binary literature' whatever that means.
 <p align="center">
   <img src="http://ment.com.mx/sudo_theme/s2.png" style="width: 100%; max-width:800px;" />
 </p>
-
 
 And that's pretty much it.
