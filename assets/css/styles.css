@@ -78,6 +78,7 @@ header.blog-title {
   .posts-index .art {
     position: relative; }
     .posts-index .art .image {
+      position: absolute;
       width: 100%;
       height: 100%;
       transform: scale(0.65);
@@ -103,7 +104,7 @@ header.blog-title {
       top: 50%;
       transform: translateY(-50%); }
   .posts-index .excerpt {
-    max-height: 3.5em;
+    max-height: 3.3em;
     overflow: hidden;
     color: #a2b0d9;
     font-size: 0.9em; }
