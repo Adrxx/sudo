@@ -47,7 +47,7 @@
 <script>
     $(function(){
         $(".blog-title .text").typed({
-            strings: ["$ ¡Hola mundo!","$ México {{date}}","$ Twitter: {{@blog.twitter}}","$ {{@blog.description}}", "{{@blog.title}}"],
+            strings: ["$ ¡Hola mundo!","$ México {{date}}","$ Twitter: {{#if twitter}}{{twitter}}{{/if}}","$ {{@blog.description}}", "{{@blog.title}}"],
             typeSpeed: 100,
             startDelay: 1500,
             backDelay: 600
